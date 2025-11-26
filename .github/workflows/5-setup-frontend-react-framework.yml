@@ -56,7 +56,7 @@ jobs:
           file: exercise-toolkit/markdown-templates/step-feedback/checking-work.md
           edit-mode: replace
 
-      START: Check practical exercise
+      # START: Check practical exercise
 
       - name: Check for codespace Django REST API endpoint in Activities.js
         id: check-activities
