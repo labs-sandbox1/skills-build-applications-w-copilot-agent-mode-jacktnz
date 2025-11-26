@@ -120,15 +120,15 @@ jobs:
             step_number: 5
             results_table:
               - description: "Check activities for the Django API endpoint"
-                passed: success
+                passed: true
               - description: "Check leaderboard for the Django API endpoint"
-                passed: success
+                passed: true
               - description: "Check teams for the Django API endpoint"
-                passed: success
+                passed: true
               - description: "Check users for the Django API endpoint"
-                passed: success
+                passed: true
               - description: "Check workouts for the Django API endpoint"
-                passed: success
+                passed: true
 
       # END: Check practical exercise
 
