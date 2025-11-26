@@ -56,57 +56,57 @@ jobs:
           file: exercise-toolkit/markdown-templates/step-feedback/checking-work.md
           edit-mode: replace
 
-      # START: Check practical exercise
+      START: Check practical exercise
 
-      # - name: Check for codespace Django REST API endpoint in Activities.js
-      #   id: check-activities
-      #   continue-on-error: true
-      #   uses: skills/action-keyphrase-checker@v1
-      #   with:
-      #     text-file: octofit-tracker/frontend/src/components/Activities.js
-      #     keyphrase: '-8000.app.github.dev/api/activities'
-      #     minimum-occurrences: 1
-      #     case-sensitive: false
+      - name: Check for codespace Django REST API endpoint in Activities.js
+        id: check-activities
+        continue-on-error: true
+        uses: skills/action-keyphrase-checker@v1
+        with:
+          text-file: octofit-tracker/frontend/src/components/Activities.js
+          keyphrase: '-8000.app.github.dev/api/activities'
+          minimum-occurrences: 1
+          case-sensitive: false
 
-      # - name: Check for codespace Django REST API endpoint in Leaderboard.js
-      #   id: check-leaderboard
-      #   continue-on-error: true
-      #   uses: skills/action-keyphrase-checker@v1
-      #   with:
-      #     text-file: octofit-tracker/frontend/src/components/Leaderboard.js
-      #     keyphrase: '-8000.app.github.dev/api/leaderboard'
-      #     minimum-occurrences: 1
-      #     case-sensitive: false
+      - name: Check for codespace Django REST API endpoint in Leaderboard.js
+        id: check-leaderboard
+        continue-on-error: true
+        uses: skills/action-keyphrase-checker@v1
+        with:
+          text-file: octofit-tracker/frontend/src/components/Leaderboard.js
+          keyphrase: '-8000.app.github.dev/api/leaderboard'
+          minimum-occurrences: 1
+          case-sensitive: false
 
-      # - name: Check for codespace Django REST API endpoint in Teams.js
-      #   id: check-teams
-      #   continue-on-error: true
-      #   uses: skills/action-keyphrase-checker@v1
-      #   with:
-      #     text-file: octofit-tracker/frontend/src/components/Teams.js
-      #     keyphrase: '-8000.app.github.dev/api/teams'
-      #     minimum-occurrences: 1
-      #     case-sensitive: false
+      - name: Check for codespace Django REST API endpoint in Teams.js
+        id: check-teams
+        continue-on-error: true
+        uses: skills/action-keyphrase-checker@v1
+        with:
+          text-file: octofit-tracker/frontend/src/components/Teams.js
+          keyphrase: '-8000.app.github.dev/api/teams'
+          minimum-occurrences: 1
+          case-sensitive: false
 
-      # - name: Check for codespace Django REST API endpoint in Users.js
-      #   id: check-users
-      #   continue-on-error: true
-      #   uses: skills/action-keyphrase-checker@v1
-      #   with:
-      #     text-file: octofit-tracker/frontend/src/components/Users.js
-      #     keyphrase: '-8000.app.github.dev/api/users'
-      #     minimum-occurrences: 1
-      #     case-sensitive: false
+      - name: Check for codespace Django REST API endpoint in Users.js
+        id: check-users
+        continue-on-error: true
+        uses: skills/action-keyphrase-checker@v1
+        with:
+          text-file: octofit-tracker/frontend/src/components/Users.js
+          keyphrase: '-8000.app.github.dev/api/users'
+          minimum-occurrences: 1
+          case-sensitive: false
 
-      # - name: Check for codespace Django REST API endpoint in Workouts.js
-      #   id: check-workouts
-      #   continue-on-error: true
-      #   uses: skills/action-keyphrase-checker@v1
-      #   with:
-      #     text-file: octofit-tracker/frontend/src/components/Workouts.js
-      #     keyphrase: '-8000.app.github.dev/api/workouts'
-      #     minimum-occurrences: 1
-      #     case-sensitive: false
+      - name: Check for codespace Django REST API endpoint in Workouts.js
+        id: check-workouts
+        continue-on-error: true
+        uses: skills/action-keyphrase-checker@v1
+        with:
+          text-file: octofit-tracker/frontend/src/components/Workouts.js
+          keyphrase: '-8000.app.github.dev/api/workouts'
+          minimum-occurrences: 1
+          case-sensitive: false
 
       - name: Update comment - step results
         uses: GrantBirki/comment@v2.1.1
