@@ -14,6 +14,9 @@ jobs:
     name: Backend Tests (Django)
     runs-on: ubuntu-latest
     
+    permissions:
+      contents: read
+    
     services:
       mongodb:
         image: mongo:4.4
@@ -62,6 +65,9 @@ jobs:
   frontend-tests:
     name: Frontend Tests (React)
     runs-on: ubuntu-latest
+    
+    permissions:
+      contents: read
 
     steps:
       - name: Checkout code
