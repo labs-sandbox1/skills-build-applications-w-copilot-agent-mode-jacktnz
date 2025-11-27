@@ -26,7 +26,7 @@ describe('Leaderboard Component', () => {
     render(<Leaderboard />);
     
     await waitFor(() => {
-      expect(screen.getByText(/Leaderboard/i)).toBeInTheDocument();
+      expect(screen.getByRole('heading', { name: /Leaderboard/i })).toBeInTheDocument();
     });
   });
 

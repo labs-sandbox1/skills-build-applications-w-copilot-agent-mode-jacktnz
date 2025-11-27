@@ -22,7 +22,7 @@ describe('Workouts Component', () => {
     render(<Workouts />);
     
     await waitFor(() => {
-      expect(screen.getByText(/Workouts/i)).toBeInTheDocument();
+      expect(screen.getByRole('heading', { name: /Workouts/i })).toBeInTheDocument();
     });
   });
 

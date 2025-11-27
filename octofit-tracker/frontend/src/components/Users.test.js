@@ -23,7 +23,7 @@ describe('Users Component', () => {
     render(<Users />);
     
     await waitFor(() => {
-      expect(screen.getByText(/Users/i)).toBeInTheDocument();
+      expect(screen.getByRole('heading', { name: /Users/i })).toBeInTheDocument();
     });
   });
 

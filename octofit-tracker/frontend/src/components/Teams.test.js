@@ -22,7 +22,7 @@ describe('Teams Component', () => {
     render(<Teams />);
     
     await waitFor(() => {
-      expect(screen.getByText(/Teams/i)).toBeInTheDocument();
+      expect(screen.getByRole('heading', { name: /Teams/i })).toBeInTheDocument();
     });
   });
 

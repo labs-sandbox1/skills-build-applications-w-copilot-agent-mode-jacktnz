@@ -22,7 +22,7 @@ describe('Activities Component', () => {
     render(<Activities />);
     
     await waitFor(() => {
-      expect(screen.getByText(/Activities/i)).toBeInTheDocument();
+      expect(screen.getByRole('heading', { name: /Activities/i })).toBeInTheDocument();
     });
   });
 
