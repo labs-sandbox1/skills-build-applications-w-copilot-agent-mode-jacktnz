@@ -21,10 +21,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure--1io%2+9ee+g^$5+^xj$s3$+-o8h7xqe8vi)hmmk4p6ju2z9!@'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+SECRET_KEY = os.environ.get('SECRET_KEY')
+if not SECRET_KEY:
+    # Fallback for development only
+    DEBUG = True
+    SECRET_KEY = 'django-insecure--1io%2+9ee+g^$5+^xj$s3$+-o8h7xqe8vi)hmmk4p6ju2z9!@'
+else:
+    # SECURITY WARNING: don't run with debug turned on in production!
+    DEBUG = False
 
 # Configure ALLOWED_HOSTS for both localhost and codespace
 codespace_name = os.environ.get('CODESPACE_NAME')
@@ -137,7 +141,19 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 # CORS settings
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = False
+if codespace_name:
+    CORS_ALLOWED_ORIGINS = [
+        f"https://{codespace_name}-3000.app.github.dev",
+        f"https://{codespace_name}-8000.app.github.dev",
+        "http://localhost:3000",
+        "http://localhost:8000",
+    ]
+else:
+    CORS_ALLOWED_ORIGINS = [
+        "http://localhost:3000",
+        "http://localhost:8000",
+    ]
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_HEADERS = ['*']
 CORS_ALLOW_METHODS = ['DELETE', 'GET', 'OPTIONS', 'PATCH', 'POST', 'PUT']
