@@ -83,7 +83,7 @@ jobs:
       - name: Install dependencies
         run: |
           cd octofit-tracker/frontend
-          npm ci
+          npm ci --legacy-peer-deps
 
       - name: Run React tests
         run: |
